@@ -81,16 +81,18 @@ class RegisterUserSteps {
 		if(status == 'positive') {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), 0)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), nameFaker, 0)
+			
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), 0)
-
 			String incNumber = CustomKeywords.'Utils.randomNumber'(3)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), nameFaker+'+'+incNumber+'@contohemail.com', 0)
-			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), 0)
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), 0)
+			
+			
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			String dobFormat = sdf.format(faker.date().birthday());
 
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), dobFormat, 0)
+			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), dobFormat, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
 
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), passwordFaker, 0)
@@ -102,9 +104,11 @@ class RegisterUserSteps {
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), username, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), 0)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), email, 0)
-			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), 0)
+			Mobile.delay(5)
+			
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), 0)
 
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), dob, 0)
+			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), dob, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
 
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), password, 0)
@@ -130,7 +134,6 @@ class RegisterUserSteps {
 		else {
 			Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.view.ViewToastNegatif'), 0)
 			Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/register-failed.png', FailureHandling.STOP_ON_FAILURE)
-			
 		}
 		Mobile.delay(3)
 		Mobile.closeApplication()

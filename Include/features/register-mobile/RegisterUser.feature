@@ -32,5 +32,5 @@ Feature: Register user prevent
       |          |                     |            |            |                  | register with all field empty                                   | negative |
       | qaeng    | haha@test           | 09/10/1998 | password12 | password12       | Register with field email invalid format                        | failed   |
       | qaeng    | baronqoro@gmail.com | 09/10/1998 | password   | password         | Register email already exist                                    | failed   |
-      | qaeng    | qaeng@email.com     | 09/10/1998 | password   | hahaha           | Register with ulangi kata sandi not match with kata sandi field | failed   |
+      | qaeng    | qaeng@email.com     | 09/10/1998 | password   | hahaha           | Register with ulangi kata sandi not match with kata sandi field | negative |
       |          | jasmine.nabila      |            |            |                  | Register redirect to otp page with java faker                   | positive |

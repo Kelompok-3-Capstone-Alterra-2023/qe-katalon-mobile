@@ -33,9 +33,9 @@ Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.Edit
 
 Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), "qaeng@email.com", 0)
 
-Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), 0)
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), 0)
 
-Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), "09/10/1998", 0)
+Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), "09/10/1998", 0)
 
 Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
 
