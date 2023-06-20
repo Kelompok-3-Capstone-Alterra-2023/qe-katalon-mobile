@@ -6,6 +6,7 @@
    <UUID>595af3b9-8dfb-41a2-8523-6eb569f4e382</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>/Users/jasmine/Katalon Studio/qe-katalon-mobile/qe-katalon-mobile.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

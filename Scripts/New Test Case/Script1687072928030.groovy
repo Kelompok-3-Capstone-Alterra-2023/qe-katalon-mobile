@@ -23,18 +23,49 @@ Mobile.tap(findTestObject('Object Repository/contoh/android.widget.ImageView (1)
 
 Mobile.tap(findTestObject('Object Repository/contoh/android.widget.Button (1)'), 0)
 
-Mobile.tap(findTestObject('Object Repository/contoh/android.widget.EditText'), 0)
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonHyperSignUp'), 0)
 
-Mobile.setText(findTestObject('Object Repository/contoh/android.widget.EditText (1)'), 'jasmine.nabila@trilogi.ac.id', 0)
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), 0)
 
-Mobile.tap(findTestObject('Object Repository/contoh/android.widget.EditText (2)'), 0)
+Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), "qa sdet", 0)
 
-Mobile.setText(findTestObject('Object Repository/contoh/android.widget.EditText (3)'), 'checkcheck', 0)
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), 0)
 
-Mobile.tap(findTestObject('Object Repository/contoh/android.widget.Button (2)'), 0)
+Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), "qaeng@email.com", 0)
 
-Mobile.verifyElementVisible(findTestObject('Object Repository/login-mobile/android.view.ViewLoginFailed'), 30)
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), 0)
 
-Mobile.delay(5)
+Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - Dob'), "09/10/1998", 0)
+
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
+
+Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), "password12", 0)
+
+Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), 0)
+
+Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), "password12", 0)
+
+Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.widget.ButtonSIgnUp'), 0)
+
+Mobile.delay(10)
+
+
+
+
+
+
+//Mobile.tap(findTestObject('Object Repository/contoh/android.widget.EditText'), 0)
+//
+//Mobile.setText(findTestObject('Object Repository/contoh/android.widget.EditText (1)'), 'jasmine.nabila@trilogi.ac.id', 0)
+//
+//Mobile.tap(findTestObject('Object Repository/contoh/android.widget.EditText (2)'), 0)
+//
+//Mobile.setText(findTestObject('Object Repository/contoh/android.widget.EditText (3)'), 'checkcheck', 0)
+//
+//Mobile.tap(findTestObject('Object Repository/contoh/android.widget.Button (2)'), 0)
+//
+//Mobile.verifyElementVisible(findTestObject('Object Repository/login-mobile/android.view.ViewLoginFailed'), 30)
+//
+//Mobile.delay(5)
 
 
