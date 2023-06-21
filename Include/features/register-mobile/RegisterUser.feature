@@ -29,8 +29,8 @@ Feature: Register user prevent
 
     Examples: 
       | username | email               | dob        | password   | confirm_password | description                                                     | status   |
-      |          |                     |            |            |                  | register with all field empty                                   | negative |
-      | qaeng    | haha@test           | 09/10/1998 | password12 | password12       | Register with field email invalid format                        | failed   |
+      |          |                     |            |            |                  | Register redirect to otp page with java faker                   | positive |
+      | qaeng    | haha@test           | 09/10/1998 | password12 | password12       | Register with field email invalid format                        | negative |
       | qaeng    | baronqoro@gmail.com | 09/10/1998 | password   | password         | Register email already exist                                    | failed   |
       | qaeng    | qaeng@email.com     | 09/10/1998 | password   | hahaha           | Register with ulangi kata sandi not match with kata sandi field | negative |
-      |          | jasmine.nabila      |            |            |                  | Register redirect to otp page with java faker                   | positive |
+      |          |                     |            |            |                  | register with field all empty                                   | negative |
