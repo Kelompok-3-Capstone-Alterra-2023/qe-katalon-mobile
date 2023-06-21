@@ -19,9 +19,9 @@ import org.openqa.selenium.Keys as Keys
 
 Mobile.startApplication('/Users/jasmine/Katalon Studio/qe-katalon-mobile/apk/app-release.apk', true)
 
-Mobile.tap(findTestObject('Object Repository/contoh/android.widget.ImageView (1)'), 0)
+Mobile.tap(findTestObject('null'), 0)
 
-Mobile.tap(findTestObject('Object Repository/contoh/android.widget.Button (1)'), 0)
+Mobile.tap(findTestObject('null'), 0)
 
 Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonHyperSignUp'), 0)
 
@@ -54,15 +54,15 @@ Mobile.delay(10)
 
 
 
-//Mobile.tap(findTestObject('Object Repository/contoh/android.widget.EditText'), 0)
+//Mobile.tap(findTestObject('null'), 0)
 //
-//Mobile.setText(findTestObject('Object Repository/contoh/android.widget.EditText (1)'), 'jasmine.nabila@trilogi.ac.id', 0)
+//Mobile.setText(findTestObject('null'), 'jasmine.nabila@trilogi.ac.id', 0)
 //
-//Mobile.tap(findTestObject('Object Repository/contoh/android.widget.EditText (2)'), 0)
+//Mobile.tap(findTestObject('null'), 0)
 //
-//Mobile.setText(findTestObject('Object Repository/contoh/android.widget.EditText (3)'), 'checkcheck', 0)
+//Mobile.setText(findTestObject('null'), 'checkcheck', 0)
 //
-//Mobile.tap(findTestObject('Object Repository/contoh/android.widget.Button (2)'), 0)
+//Mobile.tap(findTestObject('null'), 0)
 //
 //Mobile.verifyElementVisible(findTestObject('Object Repository/login-mobile/android.view.ViewLoginFailed'), 30)
 //
