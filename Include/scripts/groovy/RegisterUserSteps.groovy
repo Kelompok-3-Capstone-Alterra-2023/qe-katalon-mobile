@@ -50,6 +50,7 @@ class RegisterUserSteps {
 
 	Faker faker = new Faker();
 	String nameFaker = faker.name().firstName();
+	String lastFaker = faker.name().lastName();
 	String passwordFaker = faker.internet().password();
 	/**
 	 * The step definitions below match with Katalon sample Gherkin steps
@@ -80,24 +81,22 @@ class RegisterUserSteps {
 	public void user_fill(String username, String email, String dob, String password, String confirm_password, String status) {
 		if(status == 'positive') {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), 0)
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), nameFaker, 0)
-			
+			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), nameFaker+' '+lastFaker, 0)
+
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), 0)
 			String incNumber = CustomKeywords.'Utils.randomNumber'(3)
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), nameFaker+'+'+incNumber+'@contohemail.com', 0)
-			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), 0)
-			
-			
+			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), nameFaker+'.'+lastFaker+'@yahooo.com', 0)
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOB2'), 0)
 
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			String dobFormat = sdf.format(faker.date().birthday());
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonIconDates'), 0)
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewApply1Date'), 0)
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewBtnApply'), 0)
 
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), dobFormat, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
 
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), passwordFaker, 0)
+			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 'password', 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), 0)
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), passwordFaker, 0)
+			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), 'password', 0)
 		}
 		else {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), 0)
@@ -105,12 +104,12 @@ class RegisterUserSteps {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), 0)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), email, 0)
 			Mobile.delay(5)
+
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonIconDates'), 0)
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewApply1Date'), 0)
+			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewBtnApply'), 0)
 			
-			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), 0)
-
-			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOBNEW'), dob, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
-
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), password, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), 0)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), confirm_password, 0)
@@ -119,16 +118,15 @@ class RegisterUserSteps {
 
 	@Then("User verify register feature condition (.*) must be expected")
 	public void userVerifyRegister(String status) {
-
-		Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.widget.ButtonSIgnUp'), 0)
-		Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonSIgnUp'), 0)
+		Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.widget.ButtonDaftar'), 0)
+		Mobile.tapAndHold(findTestObject('Object Repository/register-mobile/android.widget.ButtonDaftar'), 3, 0)
+		Mobile.delay(2)
 		if(status == 'positive') {
 			Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.view.ViewLabelKodeVerif'), 0)
 			Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/register-inputotp.png', FailureHandling.STOP_ON_FAILURE)
 		}
 		else if(status == 'negative'){
-			Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.widget.ButtonSIgnUp'), 0)
-			Mobile.verifyElementNotVisible(findTestObject('Object Repository/register-mobile/android.view.ViewLabelKodeVerif'), 0)
+			Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.widget.ButtonDaftar'), 0)
 			Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/ss-negatif.png', FailureHandling.STOP_ON_FAILURE)
 		}
 		else {
