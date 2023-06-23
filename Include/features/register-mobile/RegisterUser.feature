@@ -24,13 +24,13 @@ Feature: Register user prevent
   Scenario Outline: Register user
     Given User launch app for register
     When User must be showing splash screen define <description> and click button skip and click button sign up
-    And User fill <username>,<email>,<dob>,<password>,<confirm_password> and flag <status>
+    And User fill <username>,<email>,<password>,<confirm_password> and flag <status>
     Then User verify register feature condition <status> must be expected
 
     Examples: 
-      | username | email               | dob        | password   | confirm_password | description                                                     | status   |
-      |          |                     |            |            |                  | Register redirect to otp page with java faker                   | positive |
-      | qaeng    | haha@test           | 09/10/1998 | password12 | password12       | Register with field email invalid format                        | negative |
-      | qaeng    | baronqoro@gmail.com | 09/10/1998 | password   | password         | Register email already exist                                    | failed   |
-      | qaeng    | qaeng@email.com     | 09/10/1998 | password   | hahaha           | Register with ulangi kata sandi not match with kata sandi field | negative |
-      |          |                     |            |            |                  | register with field all empty                                   | negative |
+      | username | email               | password   | confirm_password | description                                                     | status   |  
+      |          |                     |            |                  | Register redirect to otp page with java faker                   | positive |  
+      | qaeng    | haha@test           | password12 | password12       | Register with field email invalid format                        | negative |  
+      | qaeng    | baronqoro@gmail.com |            | password         | Register email already exist                                    | failed   |  
+      | qaeng    | qaeng@email.com     | password   | hahaha           | Register with ulangi kata sandi not match with kata sandi field | negative |  
+      |          |                     |            |                  | register with field all empty                                   | negative |  
