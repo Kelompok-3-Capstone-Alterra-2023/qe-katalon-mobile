@@ -5,6 +5,7 @@
 bin
 cache/
 appium.log
+*.apk
 Reports
 
 Libs
