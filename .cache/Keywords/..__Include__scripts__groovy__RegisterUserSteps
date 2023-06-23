@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "9E2DE0998B062F3002866F47692C95AF",
+  "keywordFileContentHash": "F7698E9E1E227860218797D3CAA99975",
   "keywordClasses": [
     {
       "name": "RegisterUserSteps",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
