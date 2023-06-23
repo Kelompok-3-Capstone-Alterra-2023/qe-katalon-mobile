@@ -77,8 +77,8 @@ class RegisterUserSteps {
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/screenshot-registerpage.png', FailureHandling.STOP_ON_FAILURE)
 	}
 
-	@When("User fill (.*),(.*),(.*),(.*),(.*) and flag (.*)")
-	public void user_fill(String username, String email, String dob, String password, String confirm_password, String status) {
+	@When("User fill (.*),(.*),(.*),(.*) and flag (.*)")
+	public void user_fill(String username, String email, String password, String confirm_password, String status) {
 		if(status == 'positive') {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), 0)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextUsername'), nameFaker+' '+lastFaker, 0)
@@ -107,7 +107,7 @@ class RegisterUserSteps {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonIconDates'), 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewApply1Date'), 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewBtnApply'), 0)
-			
+
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), 0)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextPassword'), password, 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextConfirmPass'), 0)

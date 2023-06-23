@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "keywordFileContentHash": "9EDA3EAC01ADFB53AC530093E6CAFEF3",
+=======
+  "keywordFileContentHash": "F7698E9E1E227860218797D3CAA99975",
+>>>>>>> 2756a275bf869ae48629e9d8cec21f992e1efeea
   "keywordClasses": [
     {
       "name": "RegisterUserSteps",

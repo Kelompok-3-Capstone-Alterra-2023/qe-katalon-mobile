@@ -1,7 +1,10 @@
 .gradle
-
+*.png
+*.jpg
+*.jpeg
 bin
-
+cache/
+appium.log
 Reports
 
 Libs
