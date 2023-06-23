@@ -1,7 +1,11 @@
 .gradle
-
+*.png
+*.jpg
+*.jpeg
 bin
-
+cache/
+appium.log
+*.apk
 Reports
 
 Libs
