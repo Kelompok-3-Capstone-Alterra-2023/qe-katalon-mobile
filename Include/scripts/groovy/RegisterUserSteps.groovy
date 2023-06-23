@@ -86,7 +86,6 @@ class RegisterUserSteps {
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), 0)
 			String incNumber = CustomKeywords.'Utils.randomNumber'(3)
 			Mobile.setText(findTestObject('Object Repository/register-mobile/android.widget.EditTextEmail'), nameFaker+'.'+lastFaker+'@yahooo.com', 0)
-			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.EditText - DOB2'), 0)
 
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonIconDates'), 0)
 			Mobile.tap(findTestObject('Object Repository/register-mobile/android.view.ViewApply1Date'), 0)
