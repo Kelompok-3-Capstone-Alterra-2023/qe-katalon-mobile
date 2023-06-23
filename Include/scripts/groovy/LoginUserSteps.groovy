@@ -92,6 +92,6 @@ class LoginUserSteps {
 			Mobile.verifyElementVisible(findTestObject('Object Repository/login-mobile/android.view.ViewFailed'), 30)
 			Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/screenshot-LoginNegative.png', FailureHandling.STOP_ON_FAILURE)
 		}
-		Mobile.closeApplication()
+//		Mobile.closeApplication()
 	}
 }
