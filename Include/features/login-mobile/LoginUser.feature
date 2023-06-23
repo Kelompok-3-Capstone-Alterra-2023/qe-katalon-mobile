@@ -31,7 +31,7 @@ Feature: Login user prevent
       | username                 | password | description                                       | status   |
       | jasmine.nabila@email.com | check123 | Login with input not registered                   | failed   |
       | skydust80@gmail.com      | checkeck | Login with input valid email and invalid password | failed   |
-      | skydust80@gmail.com      | skydust  | Login with input valid email and valid password   | positive |
+      | qatesting@email.com      | password | Login with input valid email and valid password   | positive |
       |                          |          | Login with input no email and no password         | negative |
       |                          | password | Login with input empty email and valid password   | negative |
       |                          | check123 | Login with input empty email and invalid password | negative |
