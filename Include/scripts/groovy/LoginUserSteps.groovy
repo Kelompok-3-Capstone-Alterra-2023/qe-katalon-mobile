@@ -50,7 +50,7 @@ class LoginUserSteps {
 	@Given("User launch app")
 	public void user_launch_app() {
 		String directory = RunConfiguration.getProjectDir()
-		def pathApk = ((directory + '/apk/') + 'app-release.apk')
+		def pathApk = ((directory + '/apk/') + 'app-release_new.apk')
 		Mobile.startApplication(pathApk, true)
 	}
 
@@ -64,6 +64,9 @@ class LoginUserSteps {
 		Mobile.delay(3)
 		Mobile.comment(description)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/screenshot-verifyLoginPage.png', FailureHandling.STOP_ON_FAILURE)
+		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewProfileNavbar'), 20)
+		Mobile.delay(5)
+		Mobile.tap(findTestObject('Object Repository/contoh/android.widget.Button (2)'), 0)
 	}
 
 	@And("User fill (.*) and (.*) and click button sign in")

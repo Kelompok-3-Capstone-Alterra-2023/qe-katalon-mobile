@@ -71,6 +71,7 @@ class RegisterUserSteps {
 		Mobile.tap(findTestObject('Object Repository/splash-screen-mobile/android.widget.Button'), 0)
 		Mobile.delay(3)
 		Mobile.comment(description)
+		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewProfileNavbar'), 20)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/screenshot-verifyLoginPage.png', FailureHandling.STOP_ON_FAILURE)
 		Mobile.verifyElementVisible(findTestObject('Object Repository/register-mobile/android.widget.ButtonHyperSignUp'), 0)
 		Mobile.tap(findTestObject('Object Repository/register-mobile/android.widget.ButtonHyperSignUp'), 0)
