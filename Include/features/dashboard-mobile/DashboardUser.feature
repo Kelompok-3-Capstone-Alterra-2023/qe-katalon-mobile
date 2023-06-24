@@ -19,6 +19,17 @@
 @dashboard-mobile
 Feature: Dashboard mobile
   I want to use this successfully expect to dashboard feature
+  
+  @search-bar-article
+  Scenario Outline: Search article
+    Given User click and set text <value> article
+    And User click value search and include <description>
+    Then User verify expected condition based on <status>
+
+    Examples: 
+      | value     | description                 | status  |
+      | Peristiwa | Search article is found     | success |
+      | Error     | Search article is not found | failed  |
 
   @view-list-doctor-details
   Scenario: Verify all navigate success go to consultation page until detail doctor
@@ -33,7 +44,7 @@ Feature: Dashboard mobile
     And User click notification and verified
     Then User click profile and get profile data
 
-  @article-list-detail
+  @article-detail-content-dashboard
   Scenario: Verify success clickable go to an article details content page
     Given User verify article list page
     Then User click article to see details verify article get content
