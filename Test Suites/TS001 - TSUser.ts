@@ -28,14 +28,14 @@
    <testCaseLink>
       <guid>669d2223-16cc-4b58-bde3-e4aa702a5cd6</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/dashboard-mobile/TC003 - DashboardMobile</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>f3477f4e-5c60-4a08-9d25-026c734efeab</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/help-centre-mobile/TC004 - HelpCentreMobile</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>

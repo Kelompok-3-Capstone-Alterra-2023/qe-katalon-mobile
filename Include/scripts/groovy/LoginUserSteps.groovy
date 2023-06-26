@@ -50,7 +50,7 @@ class LoginUserSteps {
 	@Given("User launch app")
 	public void user_launch_app() {
 		String directory = RunConfiguration.getProjectDir()
-		def pathApk = ((directory + '/apk/') + 'app-release_new.apk')
+		def pathApk = ((directory + '/apk/') + 'app-release_new1.apk')
 		Mobile.startApplication(pathApk, true)
 	}
 

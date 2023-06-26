@@ -20,6 +20,13 @@
 Feature: Dashboard mobile
   I want to use this successfully expect to dashboard feature
   
+   @view-list-doctor-details
+  Scenario: Verify all navigate success go to consultation page until detail doctor
+    Given User must be logged on dashboard prevent
+    When User click button consultation
+    And User choose doctor on list doctor page
+    Then User verify details doctor successfully
+
   @search-bar-article
   Scenario Outline: Search article
     Given User click and set text <value> article
@@ -28,15 +35,8 @@ Feature: Dashboard mobile
 
     Examples: 
       | value     | description                 | status  |
-      | Peristiwa | Search article is found     | success |
+      | Mendukung | Search article is found     | success |
       | Error     | Search article is not found | failed  |
-
-  @view-list-doctor-details
-  Scenario: Verify all navigate success go to consultation page until detail doctor
-    Given User must be logged on dashboard prevent
-    When User click button consultation
-    And User choose doctor on list doctor page
-    Then User verify details doctor successfully
 
   @all-navbar-success
   Scenario: Verify all navigation bar is clickable

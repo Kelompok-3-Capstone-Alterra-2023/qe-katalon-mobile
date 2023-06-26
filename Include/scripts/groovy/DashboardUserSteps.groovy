@@ -75,11 +75,16 @@ class DashboardUserSteps {
 	@Then("User verify details doctor successfully")
 	public void user_verify_details_doctor_successfully() {
 		Mobile.verifyElementVisible(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewDoctorDetail'), 30, FailureHandling.STOP_ON_FAILURE)
-		def getDoctorName = Mobile.getText(findTestObject('Object Repository/dashboard-mobile/android.view.ViewDoctorNameDetail'), 20, FailureHandling.STOP_ON_FAILURE)
+		def getDoctorName = Mobile.getText(findTestObject('Object Repository/contoh/android.view.ViewDetailDoctorName'), 20, FailureHandling.STOP_ON_FAILURE)
 		Mobile.comment(getDoctorName)
 		def getPriceDoctor = Mobile.getText(findTestObject('Object Repository/dashboard-mobile/android.view.ViewPriceDoctor'), 20)
 		Mobile.comment(getPriceDoctor)
 		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ButtonChatDetailDoctor'), 20)
+		Mobile.tap(findTestObject('Object Repository/consultation-chat-mobile/android.widget.ButtonNext'), 20)
+		Mobile.tap(findTestObject('Object Repository/consultation-chat-mobile/android.widget.ButtonBayar'), 20)
+		Mobile.delay(10)
+		Mobile.setText(findTestObject('Object Repository/consultation-chat-mobile/android.widget.EditTextChat'), "Halo dokter!", 0)
+		Mobile.tap(findTestObject('Object Repository/consultation-chat-mobile/android.view.ViewBtnSendChat'), 0)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/screenshot-schedule-doctor.png', FailureHandling.STOP_ON_FAILURE)
 		Mobile.closeApplication()
 	}
@@ -93,6 +98,7 @@ class DashboardUserSteps {
 		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewListConsultationHistory'),20)
 		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.view.ViewContentDiagnosisConsultHIstory'), 20, FailureHandling.STOP_ON_FAILURE)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/diagnosis-content.png', FailureHandling.STOP_ON_FAILURE)
+		
 	}
 
 	@And("User click notification and verified")
@@ -100,17 +106,13 @@ class DashboardUserSteps {
 		Mobile.pressBack()
 		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewNotificationNavbar'), 20)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/list-notif-consult.png', FailureHandling.STOP_ON_FAILURE)
-		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.view.ViewListNotificationConsultPsikologi'), 20)
-		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/list-notif-consult1.png', FailureHandling.STOP_ON_FAILURE)
 	}
 
 
 	@Then("User click profile and get profile data")
 	public void user_click_profile_and_get_profile_data() {
 		Mobile.pressBack()
-		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewProfileNavbar'), 20)
-		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.view.ViewEmailProfile'), 20)
-		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewProfileNavbar'), 20)
+		Mobile.tap(findTestObject('Object Repository/contoh/android.widget.ImageViewIconProfile'), 20)
 		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.view.ViewEmailProfile'), 20)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/email-profile.png', FailureHandling.STOP_ON_FAILURE)
 		Mobile.closeApplication()
@@ -133,11 +135,10 @@ class DashboardUserSteps {
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/search-value.png', FailureHandling.STOP_ON_FAILURE)
 		Mobile.delay(2)
 	}
-
 	@Then("User verify expected condition based on (.*)")
 	public void userVerifyCondition(String status) {
 		if(status == 'success') {
-			Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.view.View (1)'), 10, FailureHandling.STOP_ON_FAILURE)
+			Mobile.tap(findTestObject('Object Repository/contoh/android.view.ViewListContentArticle'), 10, FailureHandling.STOP_ON_FAILURE)
 			Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewImageDetailArticle'), 20)
 			Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/search-found.png', FailureHandling.STOP_ON_FAILURE)
 		}
@@ -152,15 +153,14 @@ class DashboardUserSteps {
 	public void userVerifyArticle() {
 		user_must_be_logged_on_dashboard_prevent()
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/dashboard.png', FailureHandling.STOP_ON_FAILURE)
-		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewBtnArticleList'), 20)
+		Mobile.verifyElementExist(findTestObject('Object Repository/contoh/android.widget.ImageViewImageArticle'), 20)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/list-article.png', FailureHandling.STOP_ON_FAILURE)
 	}
 
 	@Then("User click article to see details verify article get content")
 	public void clickArticle() {
-		Mobile.tap(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewBtnArticleList'), 20)
+		Mobile.tap(findTestObject('Object Repository/contoh/android.widget.ImageViewImageArticle'), 20)
 		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.view.ViewTitleArticleDetail'), 20)
-		Mobile.verifyElementExist(findTestObject('Object Repository/dashboard-mobile/android.widget.ImageViewImageDetailArticle'), 20)
 		Mobile.takeScreenshot('/Users/jasmine/Katalon Studio/qe-katalon-mobile/Images/content-article.png', FailureHandling.STOP_ON_FAILURE)
 		Mobile.closeApplication()
 	}

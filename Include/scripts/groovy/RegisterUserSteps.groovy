@@ -58,7 +58,7 @@ class RegisterUserSteps {
 	@Given("User launch app for register")
 	public void user_launch_app_for_register() {
 		String directory = RunConfiguration.getProjectDir()
-		def pathApk = ((directory + '/apk/') + 'app-release.apk')
+		def pathApk = ((directory + '/apk/') + 'app-release_new1.apk')
 		Mobile.startApplication(pathApk, true)
 	}
 
